@@ -598,9 +598,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="cases-closing reveal">
-            Každý klient je unikátní a jako k takovému je třeba k němu&nbsp;/&nbsp;k&nbsp;ní přistupovat.
-          </p>
+          <blockquote className="cases-closing reveal">
+            „Každý klient je unikátní a jako k takovému je třeba k němu&nbsp;/&nbsp;k&nbsp;ní přistupovat."
+          </blockquote>
         </div>
       </section>
 
