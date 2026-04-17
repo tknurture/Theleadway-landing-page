@@ -44,11 +44,11 @@ const RULES = [
   },
   {
     title: 'VYTVOŘTE SI PROVOZNÍ REZERVU',
-    body: 'Na běžný provoz domácnosti by měl mít každý vytvořenu rezervu, z které pokryje případné nenadálé výdaje. Rezerva by se měla pohybovat v takové výši, aby pokryla šest měsíců výdajů domácnosti. Je dobré ji uložit například na spořicí účet.',
+    body: 'Na\u00A0běžný provoz domácnosti by měl mít každý vytvořenu rezervu, z\u00A0které pokryje případné nenadálé výdaje. Rezerva by se měla pohybovat v\u00A0takové výši, aby pokryla šest měsíců výdajů domácnosti. Je dobré ji uložit například na\u00A0spořicí účet.',
   },
   {
     title: 'DOBŘE A LEVNĚ POJISTĚTE RODINU A MAJETEK',
-    body: 'Opatrnost znamená se zabezpečit v případě nečekaných událostí — mít kvalitní a levné pojištění, jak v případě škod na majetku, tak na zdraví. Češi zejména zapomínají na pojištění invalidity z jakékoli příčiny.',
+    body: 'Opatrnost znamená se zabezpečit v\u00A0případě nečekaných událostí — mít kvalitní a\u00A0levné pojištění, jak v\u00A0případě škod na\u00A0majetku, tak na\u00A0zdraví. Češi zejména zapomínají na\u00A0pojištění invalidity z\u00A0jakékoli příčiny.',
   },
   {
     title: 'VYŘEŠTE SI VLASTNÍ BYDLENÍ',
@@ -189,8 +189,8 @@ export default function FinancniZdravi() {
           </svg>
           <p className="intro-quote-text"><strong>Zajistíme finanční zdraví a efektivní hospodaření s penězi.</strong></p>
           <p className="intro-quote-text">
-            Pomáháme lidem získat kontrolu nad jejich financemi a dosáhnout finančního zdraví.
-            Společně zhodnotíme vaši situaci, nastavíme jasné cíle a vytvoříme plán pro efektivní hospodaření s penězi:
+            Pomáháme lidem získat kontrolu nad jejich financemi a\u00A0dosáhnout finančního zdraví.
+            Společně zhodnotíme vaši situaci, nastavíme jasné cíle a\u00A0vytvoříme plán pro efektivní hospodaření s\u00A0penězi:
           </p>
           <p className="intro-checks-label">Co nabízíme</p>
           <ul className="intro-checks">
@@ -218,7 +218,7 @@ export default function FinancniZdravi() {
           <h2 className="intro-heading">7 ZLATÝCH PRAVIDEL</h2>
           <div className="intro-divider"/>
           <p className="intro-quote-text" style={{ marginBottom: '24px' }}>
-            Zabýváme se finančním plánováním a správou majetku. Pomáháme lidem řídit se 7 zlatými pravidly:
+            Zabýváme se finančním plánováním a\u00A0správou majetku. Pomáháme lidem řídit se 7\u00A0zlatými pravidly:
           </p>
           <div className="accordion-list">
             {RULES.map((r, i) => (
@@ -244,7 +244,7 @@ export default function FinancniZdravi() {
             <p className="section-eyebrow">Kontakt</p>
             <h2 className="contact-title">Sjednejme si schůzku</h2>
             <p className="contact-lead">
-              Pro více informací nás prosím kontaktujte telefonicky, emailem,
+              Pro více informací nás prosím kontaktujte telefonicky, e-mailem,
               nebo pomocí kontaktního formuláře. Děkujeme Vám.
             </p>
             <div className="contact-detail">

@@ -117,7 +117,7 @@ const CASE_STUDIES = [
     after: [
       'Do půl roku jsme dokázali spojit všechny dluhy do jednoho.',
       'Došlo i k optimalizaci dosavadních podkladových smluv a k pojmenování rodinných cílů.',
-      'Z původního stavu, kdy v roce 2019 měli mimo dluhy naspořeno jen necelých 100 tis. Kč, jsou nyní zadluženi levněji, zabezpečeni adekvátně pro dlouhodobá rizika (vč. dvouleté dcerky) a jejich celkový kapitálový majetek tvoří cca 340 tis. Kč.',
+      'Z\u00A0původního stavu, kdy v\u00A0roce 2019 měli mimo dluhy naspořeno jen necelých 100 tis. Kč, jsou nyní zadluženi levněji, zabezpečeni adekvátně pro dlouhodobá rizika (vč. dvouleté dcerky) a\u00A0jejich celkový kapitálový majetek tvoří cca 340 tis. Kč.',
     ],
     results: [
       'Kapitálový majetek navýšen o 240 000 Kč',
@@ -131,7 +131,7 @@ const CASE_STUDIES = [
     client: 'Student téměř bez příjmu',
     before: [
       'V lednu 2021 proběhla první schůzka se studentem (20 let), který byl téměř bez příjmu.',
-      'Nebyl nikdy vedený ke spoření – nulová rezerva.',
+      'Nebyl nikdy veden ke\u00A0spoření – nulová rezerva.',
     ],
     after: [
       'Student po 6 měsících získal stabilní brigádu, ze které dokázal ušetřit 3 000 Kč.',
@@ -150,7 +150,7 @@ const CASE_STUDIES = [
     client: 'Předdůchod',
     before: [
       'Klient s primárním cílem „zajistit předdůchod".',
-      'Při schůzce jsme zjistili, že mu nic nebrání měsíčně investovat zbylé peníze a tvořit si rezervy.',
+      'Při schůzce jsme zjistili, že mu nic nebrání měsíčně investovat zbylé peníze a\u00A0tvořit si rezervy.',
     ],
     after: [
       'Měsíčně investice do podílových fondů 6 000 Kč.',
@@ -369,8 +369,8 @@ export default function Home() {
           </svg>
           <p className="intro-quote-text"><strong>Jsme TheLeadway.</strong></p>
           <p className="intro-quote-text">
-            Pomáháme lidem plnit si ambiciózní cíle, inspirujeme je k růstu
-            a budování majetku = finanční nezávislosti.
+            Pomáháme lidem plnit si ambiciózní cíle, inspirujeme je k\u00A0růstu
+            a\u00A0budování majetku – finanční nezávislosti.
           </p>
         </div>
 
@@ -423,7 +423,7 @@ export default function Home() {
               <path d="M60 44 L50 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
               <path d="M60 44 L70 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
-            <h2 className="services-main-title">S ČÍM VÁM MOHU POMOCI?</h2>
+            <h2 className="services-main-title">S ČÍM VÁM MŮŽEME POMOCI?</h2>
           </div>
           <div className="services-grid-new">
             {SERVICES.map((s, i) => (
@@ -450,9 +450,9 @@ export default function Home() {
             <p className="section-eyebrow">Kalkulačka splátky</p>
             <h2 className="section-title">Spočítejte si hypotéku přesně</h2>
             <p className="calc-lead">
-              Zadejte cenu nemovitosti, akontaci a dobu splatnosti —
+                      Zadejte cenu nemovitosti, akontaci a\u00A0dobu splatnosti —
               okamžitě uvidíte orientační výši splátky. Poté nám zanechejte kontakt
-              a ozveme se s přesnou nabídkou zdarma.
+              a\u00A0ozveme se s\u00A0přesnou nabídkou zdarma.
             </p>
             <div className="calc-trust">
               <div className="calc-trust-item"><CheckIcon/>Bezplatná konzultace bez závazků</div>
@@ -546,7 +546,7 @@ export default function Home() {
                   <div className="form-field"><input type="tel" placeholder="Telefon *" value={calcPhone} onChange={e => setCalcPhone(e.target.value)} required/></div>
                   <div className="form-field"><input type="email" placeholder="E-mail *" value={calcEmail} onChange={e => setCalcEmail(e.target.value)} required/></div>
                   <button type="submit" className="form-submit-btn" disabled={calcSubmitting}>
-                    {calcSubmitting ? 'Odesílám…' : 'KONTAKTUJTE MĚ'}
+                    {calcSubmitting ? 'Odesílám…' : 'KONTAKTUJTE NÁS'}
                   </button>
                   {calcMsg && <div className={`form-message ${calcMsg.type}`}>{calcMsg.text}</div>}
                 </form>
@@ -611,7 +611,7 @@ export default function Home() {
             <p className="section-eyebrow">Kontakt</p>
             <h2 className="contact-title">Sjednejme si schůzku</h2>
             <p className="contact-lead">
-              Pro více informací nás prosím kontaktujte telefonicky, emailem,
+              Pro více informací nás prosím kontaktujte telefonicky, e-mailem,
               nebo pomocí kontaktního formuláře. Děkujeme Vám.
             </p>
             <div className="contact-detail">

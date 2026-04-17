@@ -32,7 +32,7 @@ const CHECKS = [
 const SERVICES = [
   {
     title: 'INVESTICE A ZHODNOCENÍ FINANCÍ',
-    body: 'Od tradičních investic po moderní přístupy v rámci „family office" – správa bohatství a investic jednotlivců i rodin.',
+    body: 'Od tradičních investic po moderní přístupy v\u00A0rámci „family office" – správa bohatství a\u00A0investic jednotlivců i\u00A0rodin.',
   },
   {
     title: 'SPOŘENÍ NA DŮCHOD A BUDOUCNOST DĚTÍ',
@@ -168,12 +168,12 @@ export default function Sluzby() {
             <path d="M22 30 L22 18 C22 8, 27 2, 36 0 L38 5 C33 7, 30 12, 30 16 L34 16 L34 30 Z"/>
           </svg>
           <p className="intro-quote-text">
-            Hledáte kvalitní finanční služby v Olomouci? Máte zájem o řešení pro zabezpečení své rodiny,
-            zhodnocení financí nebo plánování budoucnosti? Jste na správném místě!
+            Hledáte kvalitní finanční služby v\u00A0Olomouci? Máte zájem o\u00A0řešení pro zabezpečení své rodiny,
+            zhodnocení financí nebo plánování budoucnosti? Jste na\u00A0správném místě!
           </p>
           <p className="intro-quote-text">
             Naše finanční služby jsou přizpůsobené vašim potřebám, ať už jste mladá rodina,
-            aktivní jednotlivec s investiční vizí nebo rodič s cílem spořit pro své děti.
+            aktivní jednotlivec s\u00A0investiční vizí nebo rodič s\u00A0cílem spořit pro své děti.
           </p>
           <p className="intro-checks-label">Co nabízíme</p>
           <ul className="intro-checks">
@@ -201,7 +201,7 @@ export default function Sluzby() {
           <h2 className="intro-heading">JAKÉ FINANČNÍ SLUŽBY POSKYTUJEME?</h2>
           <div className="intro-divider"/>
           <p className="intro-quote-text" style={{ marginBottom: '24px' }}>
-            Nabízíme komplexní finanční poradenství přizpůsobené vašim cílům a životní situaci:
+            Nabízíme komplexní finanční poradenství přizpůsobené vašim cílům a\u00A0životní situaci:
           </p>
           <div className="accordion-list">
             {SERVICES.map((s, i) => (
@@ -227,7 +227,7 @@ export default function Sluzby() {
             <p className="section-eyebrow">Kontakt</p>
             <h2 className="contact-title">Sjednejme si schůzku</h2>
             <p className="contact-lead">
-              Pro více informací nás prosím kontaktujte telefonicky, emailem,
+              Pro více informací nás prosím kontaktujte telefonicky, e-mailem,
               nebo pomocí kontaktního formuláře. Děkujeme Vám.
             </p>
             <div className="contact-detail">
