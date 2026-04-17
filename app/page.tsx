@@ -104,10 +104,65 @@ const BENEFITS = [
   'Individuální přístup',
 ];
 
-const TESTIMONIALS = [
-  { i: 'MK', n: 'Martin K.', m: 'Hypotéka na rodinný dům · Praha', t: '„Díky TheLeadway jsme získali hypotéku za podmínek, které jsme sami nikdy nesehnali. Celý proces byl velmi profesionální a bez stresu."' },
-  { i: 'LP', n: 'Lucie P.',  m: 'Refinancování hypotéky · Brno',   t: '„Refinancování proběhlo rychle a ušetřili jsme přes 2 000 Kč měsíčně. Doporučujeme každému, kdo chce výhodnější hypotéku."' },
-  { i: 'TN', n: 'Tomáš N.',  m: 'První hypotéka · Ostrava',         t: '„Jako první kupující jsme neměli žádné zkušenosti. Specialista nás provedl každým krokem — od A do Z. Skvělá práce!"' },
+const CASE_STUDIES = [
+  {
+    category: 'Renta',
+    label: 'klient z praxe',
+    client: 'Rodina s hypotékou',
+    before: [
+      'V roce 2019 rodina kupovala dům.',
+      'Financování tehdy probíhalo „natřikrát" = 3 úvěry, každý jiného typu.',
+      'V roce 2020 proběhl náš první kontakt.',
+    ],
+    after: [
+      'Do půl roku jsme dokázali spojit všechny dluhy do jednoho.',
+      'Došlo i k optimalizaci dosavadních podkladových smluv a k pojmenování rodinných cílů.',
+      'Z původního stavu, kdy v roce 2019 měli mimo dluhy naspořeno jen necelých 100 tis. Kč, jsou nyní zadluženi levněji, zabezpečeni adekvátně pro dlouhodobá rizika (vč. dvouleté dcerky) a jejich celkový kapitálový majetek tvoří cca 340 tis. Kč.',
+    ],
+    results: [
+      'Kapitálový majetek navýšen o 240 000 Kč',
+      'Měsíčně bylo ušetřeno cca 5 500 Kč',
+      'Optimalizace smluv a pojmenování rodinných cílů',
+    ],
+  },
+  {
+    category: 'Navýšení příjmu',
+    label: 'klient z praxe',
+    client: 'Student téměř bez příjmu',
+    before: [
+      'V lednu 2021 proběhla první schůzka se studentem (20 let), který byl téměř bez příjmu.',
+      'Nebyl nikdy vedený ke spoření – nulová rezerva.',
+    ],
+    after: [
+      'Student po 6 měsících získal stabilní brigádu, ze které dokázal ušetřit 3 000 Kč.',
+      '1 000 Kč měsíčně jsme přesunuli do dlouhodobé investice (akciový podílový fond).',
+      '2 000 Kč měsíčně si spořil do garantovaného depozitního fondu.',
+    ],
+    results: [
+      'Peníze začaly „pracovat" a vznikla dostatečná rezerva',
+      'V květnu 2022 měl klient připraveny prostředky na dovolenou',
+      'Pochopení disciplíny, pravidelnosti a důslednosti',
+    ],
+  },
+  {
+    category: 'Předdůchodové zajištění',
+    label: 'klient z praxe',
+    client: 'Předdůchod',
+    before: [
+      'Klient s primárním cílem „zajistit předdůchod".',
+      'Při schůzce jsme zjistili, že mu nic nebrání měsíčně investovat zbylé peníze a tvořit si rezervy.',
+    ],
+    after: [
+      'Měsíčně investice do podílových fondů 6 000 Kč.',
+      'Vlastní a pronajímá několik bytů v Přerově — rozhodl se vyměnit nejméně jeden za rekreační apartmán.',
+      'Výměna přinese zajímavější pasivní příjem i dovolenou dvakrát do roka.',
+    ],
+    results: [
+      'Vytvoření rezervy díky investici do podílových fondů',
+      'Zvýšení pasivního příjmu — výměna bytu za rekreační apartmán',
+      'Každý klient je unikátní a přistupujeme k němu individuálně',
+    ],
+  },
 ];
 
 export default function Home() {
@@ -505,24 +560,47 @@ export default function Home() {
       <section className="testimonials" id="reference">
         <div className="section-inner">
           <div className="section-header reveal">
-            <p className="section-eyebrow">Reference</p>
-            <h2 className="section-title">Co říkají naši klienti</h2>
+            <p className="section-eyebrow">Reference finančních služeb</p>
+            <h2 className="section-title">Klienti z praxe</h2>
           </div>
-          <div className="testimonials-grid">
-            {TESTIMONIALS.map((c, idx) => (
-              <div key={idx} className="testimonial-card reveal" style={{ '--delay': `${idx * 100}ms` } as React.CSSProperties}>
-                <div className="testimonial-stars">★★★★★</div>
-                <p className="testimonial-text">{c.t}</p>
-                <div className="testimonial-author">
-                  <div className="testimonial-avatar">{c.i}</div>
-                  <div>
-                    <div className="testimonial-name">{c.n}</div>
-                    <div className="testimonial-meta">{c.m}</div>
-                  </div>
+          <div className="cases-grid">
+            {CASE_STUDIES.map((c, idx) => (
+              <div key={idx} className="case-card reveal" style={{ '--delay': `${idx * 100}ms` } as React.CSSProperties}>
+                <div className="case-category">{c.category}</div>
+                <div className="case-label"># {c.label}</div>
+                <h3 className="case-client">{c.client}</h3>
+
+                <div className="case-block">
+                  <div className="case-block-title case-before-title">Před spoluprací</div>
+                  <ul className="case-list">
+                    {c.before.map((b, i) => <li key={i}>{b}</li>)}
+                  </ul>
+                </div>
+
+                <div className="case-block">
+                  <div className="case-block-title case-after-title">Po spolupráci</div>
+                  <ul className="case-list">
+                    {c.after.map((a, i) => <li key={i}>{a}</li>)}
+                  </ul>
+                </div>
+
+                <div className="case-results">
+                  <div className="case-results-title">Úspěšná realizace pro klienta</div>
+                  <ul className="case-results-list">
+                    {c.results.map((r, i) => (
+                      <li key={i}>
+                        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z"/></svg>
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
           </div>
+          <p className="cases-closing reveal">
+            Každý klient je unikátní a jako k takovému je třeba k němu&nbsp;/&nbsp;k&nbsp;ní přistupovat.
+          </p>
         </div>
       </section>
 
