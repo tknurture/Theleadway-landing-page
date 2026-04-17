@@ -1105,7 +1105,7 @@ footer p {
 @media (max-width: 900px) {
   .intro-split { margin-top: 0 !important; grid-template-columns: 1fr !important; width: 100%; min-height: unset; overflow: hidden; }
   .intro-col { padding: 70px 32px; border-radius: 0; width: 100%; min-width: 0; box-sizing: border-box; }
-  .intro-photo-placeholder { width: 200px; height: 200px; }
+  .intro-photo-img { width: 200px; height: 200px; }
   .testimonials-grid { grid-template-columns: 1fr; }
 }
 
@@ -1174,7 +1174,7 @@ footer p {
   .intro-heading { font-size: 18px; letter-spacing: 1.5px; }
   .intro-col { padding: 60px 24px; }
   .intro-quote-text { font-size: 15px; }
-  .intro-photo-placeholder { width: 180px; height: 180px; }
+  .intro-photo-img { width: 180px; height: 180px; }
 }
 
 /* ── Extra malý mobil (≤479px) ── */
@@ -1324,18 +1324,14 @@ footer p {
 .intro-photo {
   margin-top: 40px;
 }
-.intro-photo-placeholder {
+.intro-photo-img {
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: 2px dashed rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  display: block;
 }
 

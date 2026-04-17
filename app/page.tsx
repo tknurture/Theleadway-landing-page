@@ -318,9 +318,7 @@ export default function Home() {
             a budování majetku = finanční nezávislosti.
           </p>
           <div className="intro-photo">
-            <div className="intro-photo-placeholder">
-              <span>Vaše fotka</span>
-            </div>
+            <img src="/images/team-photo.png" alt="TheLeadway tým" className="intro-photo-img"/>
           </div>
         </div>
 
