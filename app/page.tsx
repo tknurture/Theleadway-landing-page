@@ -21,7 +21,6 @@ function formatNum(n: number) {
 const WEBHOOK_URL = 'https://n8n.korysol.cz/webhook/THELEADWAY_WEBHOOK';
 const INTEREST_RATE = 4.55;
 
-/* ── Animated checkmark ── */
 function AnimatedCheck() {
   return (
     <svg viewBox="0 0 52 52" className="anim-check">
@@ -35,6 +34,14 @@ function CheckIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  );
+}
+
+function ChevronDown() {
+  return (
+    <svg className="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
     </svg>
   );
 }
@@ -88,13 +95,13 @@ const SERVICE_ICONS: Record<string, ReactElement> = {
   ),
 };
 
-const SERVICES = [
+const SERVICES_GRID = [
   { key: 'hypoteka',     img: 'Jak-byt-rentier-Olomouc.jpg',          title: 'RENTA',                  text: 'Jak si představujete život bez nutnosti vydělávat peníze? Možná to zní nereálně, ale není. Klíčová otázka je: Co už teď děláte pro to, aby se tato vize stala realitou?' },
   { key: 'refinancovani',img: 'Bydleni-Olomouc.jpg',                  title: 'BYDLENÍ',                text: 'Jak si představujete ideální bydlení? Byt, nebo dům? Ve městě, na horách, nebo u moře? Pokud byste měli neomezený rozpočet, jak by vypadal váš domov?' },
-  { key: 'investice',    img: 'Sporeni-a-investice-Olomouc.jpg',       title: 'SPOŘENÍ & INVESTICE',    text: 'Má smysl budovat finanční rezervy na stabilním základě? Místo půjček na vybavení, dovolenou nebo auto by mohlo být výhodnější spořit. Finanční plán by měl zohledňovat i krátkodobé a střednědobé cíle.' },
-  { key: 'pojisteni',    img: 'Zvyseni-prijmu-Olomouc.jpg',            title: 'ZVÝŠENÍ PŘÍJMU',         text: 'Potřebovali byste pár tisíc navíc každý měsíc? Představte si, co byste mohli s 5–10 tisíci udělat — nové vybavení, vysněné auto, relaxační víkendy, nebo nezapomenutelné zážitky s rodinou.' },
-  { key: 'sporeni',      img: 'Zabezpeceni-Olomouc.jpg',              title: 'ZABEZPEČENÍ',            text: 'Co kdybychom vám řekli, že i když vám práce už nikdy nevydělá ani korunu navíc, vaše cíle stále mohou být dosažitelné? Ukážeme vám, jak se rozumně a efektivně zabezpečit proti ztrátě příjmu.' },
-  { key: 'planovani',    img: 'Zvyseni-prijmu-Olomouc.jpg',            title: 'FINANČNÍ PORADENSTVÍ',   text: 'Finanční poradenství představuje komplexní službu zaměřenou na efektivní správu a růst vašich financí. Jsme tu pro vás s individuálním přístupem a širokým spektrem služeb.' },
+  { key: 'investice',    img: 'Sporeni-a-investice-Olomouc.jpg',       title: 'SPOŘENÍ & INVESTICE',    text: 'Má smysl budovat finanční rezervy na stabilním základě? Místo půjček na vybavení, dovolenou nebo auto by mohlo být výhodnější spořit. Finanční plán by měl zohledňovat i\u00A0krátkodobé a\u00A0střednědobé cíle.' },
+  { key: 'pojisteni',    img: 'Zvyseni-prijmu-Olomouc.jpg',            title: 'ZVÝŠENÍ PŘÍJMU',         text: 'Potřebovali byste pár tisíc navíc každý měsíc? Představte si, co byste mohli s\u00A05–10 tisíci udělat — nové vybavení, vysněné auto, relaxační víkendy, nebo nezapomenutelné zážitky s\u00A0rodinou.' },
+  { key: 'sporeni',      img: 'Zabezpeceni-Olomouc.jpg',              title: 'ZABEZPEČENÍ',            text: 'Co kdybychom vám řekli, že i\u00A0když vám práce už nikdy nevydělá ani korunu navíc, vaše cíle stále mohou být dosažitelné? Ukážeme vám, jak se rozumně a\u00A0efektivně zabezpečit proti ztrátě příjmu.' },
+  { key: 'planovani',    img: 'Zvyseni-prijmu-Olomouc.jpg',            title: 'FINANČNÍ PORADENSTVÍ',   text: 'Finanční poradenství představuje komplexní službu zaměřenou na\u00A0efektivní správu a\u00A0růst vašich financí. Jsme tu pro vás s\u00A0individuálním přístupem a\u00A0širokým spektrem služeb.' },
 ];
 
 const BENEFITS = [
@@ -102,6 +109,72 @@ const BENEFITS = [
   'Vysoká profesionalita',
   'Důsledný finanční servis',
   'Individuální přístup',
+];
+
+/* ── Data ze stránky Služby ── */
+const SLUZBY_CHECKS = [
+  'Široký rozsah finančních služeb',
+  'Vysoká profesionalita',
+  'Důsledný finanční servis',
+  'Individuální přístup',
+];
+
+const SLUZBY_ACCORDION = [
+  {
+    title: 'INVESTICE A ZHODNOCENÍ FINANCÍ',
+    body: 'Od tradičních investic po moderní přístupy v\u00A0rámci „family office" – správa bohatství a\u00A0investic jednotlivců i\u00A0rodin.',
+  },
+  {
+    title: 'SPOŘENÍ NA DŮCHOD A BUDOUCNOST DĚTÍ',
+    body: 'Vytvoříme plán, který vám přinese jistotu a\u00A0zajistí vaši finanční budoucnost i\u00A0budoucnost vašich blízkých.',
+  },
+  {
+    title: 'HYPOTÉKY A BANKOVNÍ PŮJČKY',
+    body: 'Pomůžeme vám najít nejvýhodnější řešení na\u00A0trhu. Srovnáme nabídky bank a\u00A0provedeme vás celým procesem od\u00A0A\u00A0do\u00A0Z.',
+  },
+  {
+    title: 'FIREMNÍ FINANCOVÁNÍ',
+    body: 'Pro podnikatele hledající efektivní finanční strategii. Nastavíme optimální strukturu financování vašeho podnikání.',
+  },
+];
+
+/* ── Data ze stránky Finanční zdraví ── */
+const FZ_CHECKS = [
+  'Zlepšení finančního zdraví',
+  'Ochrana před riziky',
+  'Chytré investice',
+  'Pravidelné sledování finančního plánu',
+];
+
+const FZ_RULES = [
+  {
+    title: 'ZBAVTE SE DRAHÝCH DLUHŮ',
+    body: 'Draze půjčené peníze vysají vaši peněženku rychlostí blesku. Úvěry na\u00A0zbytné věci jsou nejdražší. Týden dovolené splácíte rok, dva. Nákupy na\u00A0kreditní karty sice udělají parádu, ale jejich splácení bude opravdu těžké.',
+  },
+  {
+    title: 'VYTVOŘTE SI PROVOZNÍ REZERVU',
+    body: 'Na\u00A0běžný provoz domácnosti by měl mít každý vytvořenu rezervu, z\u00A0které pokryje případné nenadálé výdaje. Rezerva by se měla pohybovat v\u00A0takové výši, aby pokryla šest měsíců výdajů domácnosti. Je dobré ji uložit například na\u00A0spořicí účet.',
+  },
+  {
+    title: 'DOBŘE A LEVNĚ POJISTĚTE RODINU A MAJETEK',
+    body: 'Opatrnost znamená se zabezpečit v\u00A0případě nečekaných událostí — mít kvalitní a\u00A0levné pojištění, jak v\u00A0případě škod na\u00A0majetku, tak na\u00A0zdraví. Češi zejména zapomínají na\u00A0pojištění invalidity z\u00A0jakékoli příčiny.',
+  },
+  {
+    title: 'VYŘEŠTE SI VLASTNÍ BYDLENÍ',
+    body: 'Pro pořízení vlastního bydlení je třeba mít alespoň 20 % z\u00A0pořizovací ceny nemovitosti. Výše dluhu by neměla překročit devítinásobek ročního čistého příjmu a\u00A0splátka maximálně 45 % měsíčního příjmu. Proto pořízení bydlení vyžaduje dlouhodobou přípravu a\u00A0finanční plánování.',
+  },
+  {
+    title: 'PRAVIDELNĚ INVESTUJTE A NESPEKULUJTE',
+    body: 'Penze od\u00A0státu je velmi nejistá proměnná. Jedinou jistotu získáte, pokud si na\u00A0důchod budete tvořit rezervy sami. Čas hraje ve\u00A0prospěch zhodnocení — čím dříve začnete, tím levnější to bude. Pravidelných 3 000 Kč měsíčně po\u00A0dobu 30 let může přinést přes 2\u00A0miliony korun.',
+  },
+  {
+    title: 'NEDRŽTE PROSTŘEDKY NA BĚŽNÝCH ÚČTECH',
+    body: 'Volné prostředky na\u00A0běžných nebo termínovaných účtech ztrácejí hodnotu vlivem inflace. Zvažte spořicí účty s\u00A0vyšším úrokem, podílové fondy nebo jiné nástroje, které vaše peníze reálně zhodnotí.',
+  },
+  {
+    title: 'OPTIMALIZUJTE DRAHÉ PRODUKTY',
+    body: 'Důležité je nejen mít finanční produkty, ale mít je správně nastavené. Pojistná rizika jako invalidita či smrt krytá v\u00A0řádech stotisíců korun nemusí být dostačující. Špatně nastavené pojistné produkty jsou opravdu drahé — zjistíte to, až se něco stane.',
+  },
 ];
 
 const CASE_STUDIES = [
@@ -116,7 +189,7 @@ const CASE_STUDIES = [
     ],
     after: [
       'Do půl roku jsme dokázali spojit všechny dluhy do jednoho.',
-      'Došlo i k optimalizaci dosavadních podkladových smluv a k pojmenování rodinných cílů.',
+      'Došlo i\u00A0k\u00A0optimalizaci dosavadních podkladových smluv a\u00A0k\u00A0pojmenování rodinných cílů.',
       'Z\u00A0původního stavu, kdy v\u00A0roce 2019 měli mimo dluhy naspořeno jen necelých 100 tis. Kč, jsou nyní zadluženi levněji, zabezpečeni adekvátně pro dlouhodobá rizika (vč. dvouleté dcerky) a\u00A0jejich celkový kapitálový majetek tvoří cca 340 tis. Kč.',
     ],
     results: [
@@ -170,7 +243,7 @@ export default function Home() {
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
 
-  /* ── Full calc state ── */
+  /* ── Calc state ── */
   const [propertyPrice, setPropertyPrice] = useState<number | ''>('');
   const [downPayment, setDownPayment] = useState<number | ''>('');
   const [termYears, setTermYears] = useState(25);
@@ -194,8 +267,7 @@ export default function Home() {
   const [contactMsg, setContactMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const handleScroll = useCallback(() => {
-    const y = window.scrollY;
-    headerRef.current?.classList.toggle('scrolled', y > 80);
+    headerRef.current?.classList.toggle('scrolled', window.scrollY > 80);
   }, []);
 
   useEffect(() => {
@@ -205,7 +277,6 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    /* Menu */
     let scrollPos = 0;
     const toggle = menuToggleRef.current;
     const nav = navRef.current;
@@ -226,7 +297,6 @@ export default function Home() {
     toggle?.addEventListener('click', () => (nav?.classList.contains('active') ? closeMenu() : openMenu()));
     nav?.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
 
-    /* Reveal observer */
     const revealObs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.1 }
@@ -320,8 +390,8 @@ export default function Home() {
         </button>
         <nav ref={navRef}>
           <a href="#">Domů</a>
-          <a href="/sluzby">Služby</a>
-          <a href="/financni-zdravi">Finanční zdraví</a>
+          <a href="#sluzby">Služby</a>
+          <a href="#financni-zdravi">Finanční zdraví</a>
           <a href="#reference">Reference</a>
           <a href="#kalkulator">Spolupráce</a>
           <a href="#kontakt" className="nav-cta-btn">Kontakt</a>
@@ -349,18 +419,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INTRO SPLIT - 2 columns */}
+      {/* INTRO SPLIT — O nás */}
       <section className="intro-split" id="vyhody">
         <div className="intro-col intro-col-dark reveal-left">
           <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-            <path d="M60 8 L14 62"/>
-            <path d="M60 8 L106 62"/>
-            <path d="M60 20 L26 62"/>
-            <path d="M60 20 L94 62"/>
-            <path d="M60 32 L38 62"/>
-            <path d="M60 32 L82 62"/>
-            <path d="M60 44 L50 62"/>
-            <path d="M60 44 L70 62"/>
+            <path d="M60 8 L14 62"/><path d="M60 8 L106 62"/>
+            <path d="M60 20 L26 62"/><path d="M60 20 L94 62"/>
+            <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
+            <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
           </svg>
           <h2 className="intro-heading">FINANČNÍ PORADENSTVÍ OLOMOUC</h2>
           <svg className="intro-quote" viewBox="0 0 40 30" fill="currentColor">
@@ -376,14 +442,10 @@ export default function Home() {
 
         <div className="intro-col intro-col-light reveal-right">
           <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-            <path d="M60 8 L14 62"/>
-            <path d="M60 8 L106 62"/>
-            <path d="M60 20 L26 62"/>
-            <path d="M60 20 L94 62"/>
-            <path d="M60 32 L38 62"/>
-            <path d="M60 32 L82 62"/>
-            <path d="M60 44 L50 62"/>
-            <path d="M60 44 L70 62"/>
+            <path d="M60 8 L14 62"/><path d="M60 8 L106 62"/>
+            <path d="M60 20 L26 62"/><path d="M60 20 L94 62"/>
+            <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
+            <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
           </svg>
           <h2 className="intro-heading">PROČ SPOLUPRACOVAT S NÁMI?</h2>
           <div className="intro-divider"/>
@@ -409,8 +471,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SLUŽBY */}
-      <section className="services" id="sluzby">
+      {/* SLUŽBY — detail (přesunuto ze samostatné stránky) */}
+      <section className="intro-split intro-split--alt" id="sluzby">
+        <div className="intro-col intro-col-dark reveal-left">
+          <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <path d="M60 8 L14 62"/><path d="M60 8 L106 62"/>
+            <path d="M60 20 L26 62"/><path d="M60 20 L94 62"/>
+            <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
+            <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
+          </svg>
+          <h2 className="intro-heading">VAŠE JISTOTA VE SVĚTĚ FINANCÍ</h2>
+          <svg className="intro-quote" viewBox="0 0 40 30" fill="currentColor">
+            <path d="M0 30 L0 18 C0 8, 5 2, 14 0 L16 5 C11 7, 8 12, 8 16 L12 16 L12 30 Z"/>
+            <path d="M22 30 L22 18 C22 8, 27 2, 36 0 L38 5 C33 7, 30 12, 30 16 L34 16 L34 30 Z"/>
+          </svg>
+          <p className="intro-quote-text">
+            Hledáte kvalitní finanční služby v\u00A0Olomouci? Máte zájem o\u00A0řešení pro zabezpečení své rodiny,
+            zhodnocení financí nebo plánování budoucnosti? Jste na\u00A0správném místě!
+          </p>
+          <p className="intro-quote-text">
+            Naše finanční služby jsou přizpůsobené vašim potřebám, ať už jste mladá rodina,
+            aktivní jednotlivec s\u00A0investiční vizí nebo rodič s\u00A0cílem spořit pro své děti.
+          </p>
+          <p className="intro-checks-label">Co nabízíme</p>
+          <ul className="intro-checks">
+            {SLUZBY_CHECKS.map(c => (
+              <li key={c}>
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="20" cy="20" r="17"/>
+                  <polyline points="12 20 18 26 28 15"/>
+                </svg>
+                <span>{c.toUpperCase()}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="#kontakt" className="btn btn-primary">KONTAKTUJTE NÁS</a>
+        </div>
+
+        <div className="intro-col intro-col-light reveal-right">
+          <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <path d="M60 8 L14 62"/><path d="M60 8 L106 62"/>
+            <path d="M60 20 L26 62"/><path d="M60 20 L94 62"/>
+            <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
+            <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
+          </svg>
+          <h2 className="intro-heading">JAKÉ FINANČNÍ SLUŽBY POSKYTUJEME?</h2>
+          <div className="intro-divider"/>
+          <p className="intro-quote-text" style={{ marginBottom: '24px' }}>
+            Nabízíme komplexní finanční poradenství přizpůsobené vašim cílům a\u00A0životní situaci:
+          </p>
+          <div className="accordion-list">
+            {SLUZBY_ACCORDION.map((s, i) => (
+              <div className="accordion-item" key={i}>
+                <details>
+                  <summary>
+                    <span className="accordion-num">{i + 1}</span>
+                    <span>{s.title}</span>
+                    <ChevronDown/>
+                  </summary>
+                  <p className="accordion-body">{s.body}</p>
+                </details>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CO VÁM MŮŽEME POMOCI — grid karet */}
+      <section className="services" id="co-umime">
         <div className="section-inner">
           <div className="services-header reveal">
             <svg className="services-logo-icon" viewBox="0 0 120 80" fill="none">
@@ -426,17 +554,76 @@ export default function Home() {
             <h2 className="services-main-title">S ČÍM VÁM MŮŽEME POMOCI?</h2>
           </div>
           <div className="services-grid-new">
-            {SERVICES.map((s, i) => (
+            {SERVICES_GRID.map((s, i) => (
               <div key={s.key} className="service-card-new reveal" style={{ '--delay': `${i * 80}ms` } as React.CSSProperties}>
                 <div className="service-img-wrap">
-                  <img
-                    src={`/images/services/${s.img}`}
-                    alt={s.title}
-                    className="service-img"
-                  />
+                  <img src={`/images/services/${s.img}`} alt={s.title} className="service-img"/>
                 </div>
                 <h3 className="service-card-title">{s.title}</h3>
                 <p className="service-card-text">{s.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINANČNÍ ZDRAVÍ — přesunuto ze samostatné stránky */}
+      <section className="intro-split intro-split--alt" id="financni-zdravi">
+        <div className="intro-col intro-col-dark reveal-left">
+          <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <path d="M60 8 L14 62"/><path d="M60 8 L106 62"/>
+            <path d="M60 20 L26 62"/><path d="M60 20 L94 62"/>
+            <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
+            <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
+          </svg>
+          <h2 className="intro-heading">FINANČNÍ ZDRAVÍ</h2>
+          <svg className="intro-quote" viewBox="0 0 40 30" fill="currentColor">
+            <path d="M0 30 L0 18 C0 8, 5 2, 14 0 L16 5 C11 7, 8 12, 8 16 L12 16 L12 30 Z"/>
+            <path d="M22 30 L22 18 C22 8, 27 2, 36 0 L38 5 C33 7, 30 12, 30 16 L34 16 L34 30 Z"/>
+          </svg>
+          <p className="intro-quote-text"><strong>Zajistíme finanční zdraví a efektivní hospodaření s penězi.</strong></p>
+          <p className="intro-quote-text">
+            Pomáháme lidem získat kontrolu nad jejich financemi a\u00A0dosáhnout finančního zdraví.
+            Společně zhodnotíme vaši situaci, nastavíme jasné cíle a\u00A0vytvoříme plán pro efektivní hospodaření s\u00A0penězi:
+          </p>
+          <p className="intro-checks-label">Co nabízíme</p>
+          <ul className="intro-checks">
+            {FZ_CHECKS.map(c => (
+              <li key={c}>
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="20" cy="20" r="17"/>
+                  <polyline points="12 20 18 26 28 15"/>
+                </svg>
+                <span>{c.toUpperCase()}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="#kontakt" className="btn btn-primary">KONTAKTUJTE NÁS</a>
+        </div>
+
+        <div className="intro-col intro-col-light reveal-right">
+          <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <path d="M60 8 L14 62"/><path d="M60 8 L106 62"/>
+            <path d="M60 20 L26 62"/><path d="M60 20 L94 62"/>
+            <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
+            <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
+          </svg>
+          <h2 className="intro-heading">7 ZLATÝCH PRAVIDEL</h2>
+          <div className="intro-divider"/>
+          <p className="intro-quote-text" style={{ marginBottom: '24px' }}>
+            Zabýváme se finančním plánováním a\u00A0správou majetku. Pomáháme lidem řídit se 7\u00A0zlatými pravidly:
+          </p>
+          <div className="accordion-list">
+            {FZ_RULES.map((r, i) => (
+              <div className="accordion-item" key={i}>
+                <details>
+                  <summary>
+                    <span className="accordion-num">{i + 1}</span>
+                    <span>{r.title}</span>
+                    <ChevronDown/>
+                  </summary>
+                  <p className="accordion-body">{r.body}</p>
+                </details>
               </div>
             ))}
           </div>
@@ -450,7 +637,7 @@ export default function Home() {
             <p className="section-eyebrow">Kalkulačka splátky</p>
             <h2 className="section-title">Spočítejte si hypotéku přesně</h2>
             <p className="calc-lead">
-                      Zadejte cenu nemovitosti, akontaci a\u00A0dobu splatnosti —
+              Zadejte cenu nemovitosti, akontaci a\u00A0dobu splatnosti —
               okamžitě uvidíte orientační výši splátky. Poté nám zanechejte kontakt
               a\u00A0ozveme se s\u00A0přesnou nabídkou zdarma.
             </p>
@@ -657,7 +844,7 @@ export default function Home() {
       <footer>
         <div className="footer-logo"><img src="/images/theleadway_logo_white.png" alt="theleadway"/></div>
         <div className="footer-links">
-          <a href="/sluzby">Služby</a>
+          <a href="#sluzby">Služby</a>
           <a href="#vyhody">Výhody</a>
           <a href="#kalkulator">Kalkulačka</a>
           <a href="#reference">Reference</a>
