@@ -265,7 +265,7 @@ export default function Home() {
         </button>
         <nav ref={navRef}>
           <a href="#">Domů</a>
-          <a href="#sluzby">Služby</a>
+          <a href="/sluzby">Služby</a>
           <a href="/financni-zdravi">Finanční zdraví</a>
           <a href="#reference">Reference</a>
           <a href="#kalkulator">Spolupráce</a>
@@ -579,7 +579,7 @@ export default function Home() {
       <footer>
         <div className="footer-logo"><img src="/images/theleadway_logo_white.png" alt="theleadway"/></div>
         <div className="footer-links">
-          <a href="#sluzby">Služby</a>
+          <a href="/sluzby">Služby</a>
           <a href="#vyhody">Výhody</a>
           <a href="#kalkulator">Kalkulačka</a>
           <a href="#reference">Reference</a>

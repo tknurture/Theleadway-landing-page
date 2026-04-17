@@ -14,14 +14,6 @@ function AnimatedCheck() {
   );
 }
 
-function CheckIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="20 6 9 17 4 12"/>
-    </svg>
-  );
-}
-
 function ChevronDown() {
   return (
     <svg className="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -31,44 +23,32 @@ function ChevronDown() {
 }
 
 const CHECKS = [
-  'Zlepšení finančního zdraví',
-  'Ochrana před riziky',
-  'Chytré investice',
-  'Pravidelné sledování finančního plánu',
+  'Široký rozsah finančních služeb',
+  'Vysoká profesionalita',
+  'Důsledný finanční servis',
+  'Individuální přístup',
 ];
 
-const RULES = [
+const SERVICES = [
   {
-    title: 'ZBAVTE SE DRAHÝCH DLUHŮ',
-    body: 'Draze půjčené peníze vysají vaši peněženku rychlostí blesku. Úvěry na zbytné věci jsou nejdražší. Týden dovolené splácíte rok, dva. Nákupy na kreditní karty sice udělají parádu, ale jejich splácení bude opravdu těžké.',
+    title: 'INVESTICE A ZHODNOCENÍ FINANCÍ',
+    body: 'Od tradičních investic po moderní přístupy v rámci „family office" – správa bohatství a investic jednotlivců i rodin.',
   },
   {
-    title: 'VYTVOŘTE SI PROVOZNÍ REZERVU',
-    body: 'Na běžný provoz domácnosti by měl mít každý vytvořenu rezervu, z které pokryje případné nenadálé výdaje. Rezerva by se měla pohybovat v takové výši, aby pokryla šest měsíců výdajů domácnosti. Je dobré ji uložit například na spořicí účet.',
+    title: 'SPOŘENÍ NA DŮCHOD A BUDOUCNOST DĚTÍ',
+    body: 'Vytvoříme plán, který vám přinese jistotu a zajistí vaši finanční budoucnost i budoucnost vašich blízkých.',
   },
   {
-    title: 'DOBŘE A LEVNĚ POJISTĚTE RODINU A MAJETEK',
-    body: 'Opatrnost znamená se zabezpečit v případě nečekaných událostí — mít kvalitní a levné pojištění, jak v případě škod na majetku, tak na zdraví. Češi zejména zapomínají na pojištění invalidity z jakékoli příčiny.',
+    title: 'HYPOTÉKY A BANKOVNÍ PŮJČKY',
+    body: 'Pomůžeme vám najít nejvýhodnější řešení na trhu. Srovnáme nabídky bank a provedeme vás celým procesem od A do Z.',
   },
   {
-    title: 'VYŘEŠTE SI VLASTNÍ BYDLENÍ',
-    body: 'Pro pořízení vlastního bydlení je třeba mít alespoň 20 % z pořizovací ceny nemovitosti. Výše dluhu by neměla překročit devítinásobek ročního čistého příjmu a splátka maximálně 45 % měsíčního příjmu. Proto pořízení bydlení vyžaduje dlouhodobou přípravu a finanční plánování.',
-  },
-  {
-    title: 'PRAVIDELNĚ INVESTUJTE A NESPEKULUJTE',
-    body: 'Penze od státu je velmi nejistá proměnná. Jedinou jistotu získáte, pokud si na důchod budete tvořit rezervy sami. Čas hraje ve prospěch zhodnocení — čím dříve začnete, tím levnější to bude. Pravidelných 3 000 Kč měsíčně po dobu 30 let může přinést přes 2 miliony korun.',
-  },
-  {
-    title: 'NEDRŽTE PROSTŘEDKY NA BĚŽNÝCH ÚČTECH',
-    body: 'Volné prostředky na běžných nebo termínovaných účtech ztrácejí hodnotu vlivem inflace. Zvažte spořicí účty s vyšším úrokem, podílové fondy nebo jiné nástroje, které vaše peníze reálně zhodnotí.',
-  },
-  {
-    title: 'OPTIMALIZUJTE DRAHÉ PRODUKTY',
-    body: 'Důležité je nejen mít finanční produkty, ale mít je správně nastavené. Pojistná rizika jako invalidita či smrt krytá v řádech stotisíců korun nemusí být dostačující. Špatně nastavené pojistné produkty jsou opravdu drahé — zjistíte to, až se něco stane.',
+    title: 'FIREMNÍ FINANCOVÁNÍ',
+    body: 'Pro podnikatele hledající efektivní finanční strategii. Nastavíme optimální strukturu financování vašeho podnikání.',
   },
 ];
 
-export default function FinancniZdravi() {
+export default function Sluzby() {
   const headerRef = useRef<HTMLElement>(null);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -135,7 +115,7 @@ export default function FinancniZdravi() {
           jmeno: fd.get('jmeno'),
           email: fd.get('email'),
           zprava: fd.get('zprava'),
-          source: 'TheLeadway - Finanční zdraví',
+          source: 'TheLeadway - Služby',
           timestamp: new Date().toISOString(),
         }),
       });
@@ -163,8 +143,8 @@ export default function FinancniZdravi() {
         </button>
         <nav ref={navRef}>
           <a href="/">Domů</a>
-          <a href="/sluzby">Služby</a>
-          <a href="/financni-zdravi" className="nav-active">Finanční zdraví</a>
+          <a href="/sluzby" className="nav-active">Služby</a>
+          <a href="/financni-zdravi">Finanční zdraví</a>
           <a href="/#reference">Reference</a>
           <a href="/#kalkulator">Spolupráce</a>
           <a href="#kontakt" className="nav-cta-btn">Kontakt</a>
@@ -182,15 +162,18 @@ export default function FinancniZdravi() {
             <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
             <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
           </svg>
-          <h2 className="intro-heading">FINANČNÍ ZDRAVÍ</h2>
+          <h2 className="intro-heading">VAŠE JISTOTA VE SVĚTĚ FINANCÍ</h2>
           <svg className="intro-quote" viewBox="0 0 40 30" fill="currentColor">
             <path d="M0 30 L0 18 C0 8, 5 2, 14 0 L16 5 C11 7, 8 12, 8 16 L12 16 L12 30 Z"/>
             <path d="M22 30 L22 18 C22 8, 27 2, 36 0 L38 5 C33 7, 30 12, 30 16 L34 16 L34 30 Z"/>
           </svg>
-          <p className="intro-quote-text"><strong>Zajistíme finanční zdraví a efektivní hospodaření s penězi.</strong></p>
           <p className="intro-quote-text">
-            Pomáháme lidem získat kontrolu nad jejich financemi a dosáhnout finančního zdraví.
-            Společně zhodnotíme vaši situaci, nastavíme jasné cíle a vytvoříme plán pro efektivní hospodaření s penězi:
+            Hledáte kvalitní finanční služby v Olomouci? Máte zájem o řešení pro zabezpečení své rodiny,
+            zhodnocení financí nebo plánování budoucnosti? Jste na správném místě!
+          </p>
+          <p className="intro-quote-text">
+            Naše finanční služby jsou přizpůsobené vašim potřebám, ať už jste mladá rodina,
+            aktivní jednotlivec s investiční vizí nebo rodič s cílem spořit pro své děti.
           </p>
           <ul className="intro-checks">
             {CHECKS.map(c => (
@@ -214,21 +197,21 @@ export default function FinancniZdravi() {
             <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
             <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
           </svg>
-          <h2 className="intro-heading">7 ZLATÝCH PRAVIDEL</h2>
+          <h2 className="intro-heading">JAKÉ FINANČNÍ SLUŽBY POSKYTUJEME?</h2>
           <div className="intro-divider"/>
           <p className="intro-quote-text" style={{ marginBottom: '24px' }}>
-            Zabýváme se finančním plánováním a správou majetku. Pomáháme lidem řídit se 7 zlatými pravidly:
+            Nabízíme komplexní finanční poradenství přizpůsobené vašim cílům a životní situaci:
           </p>
           <div className="accordion-list">
-            {RULES.map((r, i) => (
+            {SERVICES.map((s, i) => (
               <div className="accordion-item" key={i}>
                 <details>
                   <summary>
                     <span className="accordion-num">{i + 1}</span>
-                    <span>{r.title}</span>
+                    <span>{s.title}</span>
                     <ChevronDown/>
                   </summary>
-                  <p className="accordion-body">{r.body}</p>
+                  <p className="accordion-body">{s.body}</p>
                 </details>
               </div>
             ))}
