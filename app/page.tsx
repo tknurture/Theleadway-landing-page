@@ -275,10 +275,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero">
-        <video className="hero-video" autoPlay loop muted playsInline>
-          <source src="/videos/hero.webm" type="video/webm"/>
-          <source src="/videos/hero.mp4" type="video/mp4"/>
-        </video>
+        <div className="hero-bg-img" style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}/>
         <div className="hero-overlay"/>
         <div className="hero-inner">
           <div className="hero-content reveal-left">

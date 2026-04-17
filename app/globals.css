@@ -210,20 +210,24 @@ nav a:hover:not(.nav-cta-btn)::after { width: 100%; }
   overflow: visible;
 }
 
-.hero-video {
+.hero-bg-img {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   z-index: 0;
-  opacity: 0.18;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(247,248,255,0.85) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(240,242,255,0.75) 50%,
+    rgba(255,255,255,0.55) 100%
+  );
   z-index: 1;
 }
 
