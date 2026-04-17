@@ -317,9 +317,6 @@ export default function Home() {
             Pomáháme lidem plnit si ambiciózní cíle, inspirujeme je k růstu
             a budování majetku = finanční nezávislosti.
           </p>
-          <div className="intro-photo">
-            <img src="/images/team-photo.png" alt="TheLeadway tým" className="intro-photo-img"/>
-          </div>
         </div>
 
         <div className="intro-col intro-col-light reveal-right">

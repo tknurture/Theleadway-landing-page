@@ -1321,17 +1321,4 @@ footer p {
   height: 32px;
   color: var(--indigo);
 }
-.intro-photo {
-  margin-top: 40px;
-}
-.intro-photo-img {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  border: 3px solid rgba(255,255,255,0.2);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  display: block;
-}
 
