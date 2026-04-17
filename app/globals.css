@@ -903,6 +903,7 @@ section {
   background-image: url('/images/contact-bg.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   opacity: 0.18;
   z-index: 0;
 }
