@@ -175,6 +175,7 @@ export default function Sluzby() {
             Naše finanční služby jsou přizpůsobené vašim potřebám, ať už jste mladá rodina,
             aktivní jednotlivec s investiční vizí nebo rodič s cílem spořit pro své děti.
           </p>
+          <p className="intro-checks-label">Co nabízíme</p>
           <ul className="intro-checks">
             {CHECKS.map(c => (
               <li key={c}>

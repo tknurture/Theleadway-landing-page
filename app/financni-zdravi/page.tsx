@@ -192,6 +192,7 @@ export default function FinancniZdravi() {
             Pomáháme lidem získat kontrolu nad jejich financemi a dosáhnout finančního zdraví.
             Společně zhodnotíme vaši situaci, nastavíme jasné cíle a vytvoříme plán pro efektivní hospodaření s penězi:
           </p>
+          <p className="intro-checks-label">Co nabízíme</p>
           <ul className="intro-checks">
             {CHECKS.map(c => (
               <li key={c}>
