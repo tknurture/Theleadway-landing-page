@@ -1393,6 +1393,10 @@ details[open] .accordion-arrow { transform: rotate(180deg); }
 .intro-split--standalone { margin-top: 0 !important; padding-top: 80px; }
 /* intro-split sekce přečuhující do předchozí sekce */
 .intro-split--alt { margin-top: -160px !important; }
+.intro-split--alt .intro-col {
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -16px 48px rgba(26, 26, 46, 0.22);
+}
 
 /* Dark col CTA button variant */
 .intro-col-dark .btn-primary {
