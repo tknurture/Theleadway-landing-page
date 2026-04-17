@@ -1318,6 +1318,9 @@ footer p {
   letter-spacing: 1.5px;
   color: var(--text-dark);
 }
+.intro-col-dark .intro-checks li {
+  color: rgba(255,255,255,0.92);
+}
 .intro-checks svg {
   flex-shrink: 0;
   width: 32px;
