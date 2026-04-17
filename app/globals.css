@@ -34,6 +34,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -1050,9 +1052,16 @@ footer p {
 
 /* ──────────── Responsive ──────────── */
 
-@media (max-width: 1024px) {
-  .services-grid-new { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid { grid-template-columns: 1fr; }
+/* ── Menší desktop (1200–1024px) ── */
+@media (max-width: 1199px) {
+  section { padding: 90px 40px; }
+  .hero { padding: 130px 40px 90px; }
+}
+
+/* ── Tablet landscape + menší desktop (≤1023px) ── */
+@media (max-width: 1023px) {
+  .services-grid-new { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .calculator-inner,
   .contact-inner,
   .hero-inner {
@@ -1060,9 +1069,22 @@ footer p {
     gap: 48px;
   }
   .hero { padding: 130px 32px 80px; }
+  .calc-card,
+  .contact-form-wrap { padding: 32px; }
+  .service-img-wrap { width: 240px; height: 240px; }
+  .intro-split { margin-top: -100px; }
 }
 
-@media (max-width: 768px) {
+/* ── Tablet portrait (≤900px) ── */
+@media (max-width: 900px) {
+  .intro-split { margin-top: 0; grid-template-columns: 1fr; }
+  .intro-col { padding: 70px 32px; border-radius: 0; }
+  .intro-photo-placeholder { width: 200px; height: 200px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Mobil + velký mobil (≤767px) ── */
+@media (max-width: 767px) {
   header { padding: 14px 20px; }
   header.scrolled { padding: 10px 20px; }
 
@@ -1079,49 +1101,104 @@ footer p {
     transform: translateX(100%);
     transition: transform 0.4s ease;
     padding: 60px 40px;
+    z-index: 105;
   }
   nav.active { transform: translateX(0); }
   nav a { font-size: 18px; }
 
-  section,
-  .hero,
-  .about,
-  .services,
-  .benefits,
-  .calculator,
-  .testimonials,
-  .contact {
+  section {
+    padding-top: 70px;
+    padding-bottom: 70px;
     padding-left: 20px;
     padding-right: 20px;
   }
-
-  .hero { padding-top: 110px; padding-bottom: 60px; min-height: auto; }
+  .hero { padding: 100px 20px 60px; min-height: auto; }
+  .hero-title { font-size: clamp(26px, 7vw, 36px); }
+  .hero-eyebrow-plain { font-size: 12px; letter-spacing: 1.5px; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .btn { width: 100%; }
 
-  .services-grid-new,
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-  .service-circle-wrap { width: 180px; height: 180px; }
+  /* Anti-iOS-zoom: force 16px on all inputs */
+  input, textarea, select { font-size: 16px !important; }
+
+  .services-grid-new { grid-template-columns: 1fr; }
+  .service-img-wrap { width: 220px; height: 220px; }
 
   .calc-card,
-  .contact-form-wrap {
-    padding: 28px 22px;
-  }
-
+  .contact-form-wrap { padding: 28px 22px; }
   .contact-form-row { grid-template-columns: 1fr; }
 
-  .footer-links { gap: 16px; }
+  /* Slider thumb — larger touch target */
+  .slider-row input[type="range"]::-webkit-slider-thumb {
+    width: 28px; height: 28px;
+  }
+  .slider-row input[type="range"]::-moz-range-thumb {
+    width: 28px; height: 28px;
+  }
 
-  section { padding-top: 70px; padding-bottom: 70px; }
+  /* Prevent horizontal scroll from reveal animations */
+  .reveal-left { transform: translateY(24px); }
+  .reveal-right { transform: translateY(24px); }
+
+  .footer-links { gap: 16px; }
 }
 
-@media (max-width: 480px) {
-  .hero-title { font-size: 32px; }
+/* ── Malý mobil (≤599px) ── */
+@media (max-width: 599px) {
+  .intro-heading { font-size: 18px; letter-spacing: 1.5px; }
+  .intro-col { padding: 60px 24px; }
+  .intro-quote-text { font-size: 15px; }
+  .intro-photo-placeholder { width: 180px; height: 180px; }
+}
+
+/* ── Extra malý mobil (≤479px) ── */
+@media (max-width: 479px) {
+  section { padding: 60px 16px; }
+  .hero { padding: 90px 16px 50px; }
+  .hero-title { font-size: clamp(22px, 8vw, 30px); }
+  .hero-title-line { white-space: normal; }
   .hero-subtitle { font-size: 18px; }
-  .section-title { font-size: 26px; }
+  .section-title { font-size: 24px; }
+
+  .service-img-wrap { width: 180px; height: 180px; }
+
+  .calc-result { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .calc-result > div:last-child { text-align: left !important; }
   .calc-result-amount { font-size: 22px; }
+  .calc-slider-label span:first-child { font-size: 12px; }
+  .calc-slider-value { font-size: 16px; }
+
+  .contact-form-wrap { padding: 24px 18px; }
+}
+
+/* ── Extra malý (≤359px) ── */
+@media (max-width: 359px) {
+  header { padding: 10px 14px; }
+  .logo img { height: 30px; }
+  .hero-title { font-size: 22px; }
+  .section-title { font-size: 22px; }
+}
+
+/* ── Landscape telefon ── */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero { min-height: auto; padding: 80px 20px 40px; }
+  .hero-video { opacity: 0.1; }
+}
+
+/* ── Touch zařízení: reset sticky hover efektů ── */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .testimonial-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+  .slider-row input[type="range"]::-webkit-slider-thumb {
+    width: 28px; height: 28px;
+  }
 }
 
 /* ── INTRO SPLIT (2 columns) ── */
@@ -1236,8 +1313,3 @@ footer p {
   text-transform: uppercase;
 }
 
-@media (max-width: 900px) {
-  .intro-split { grid-template-columns: 1fr; }
-  .intro-col { padding: 70px 32px; }
-  .intro-photo-placeholder { width: 200px; height: 200px; }
-}
