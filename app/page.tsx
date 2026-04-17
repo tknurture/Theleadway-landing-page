@@ -266,7 +266,7 @@ export default function Home() {
         <nav ref={navRef}>
           <a href="#">Domů</a>
           <a href="#sluzby">Služby</a>
-          <a href="#vyhody">Finanční zdraví</a>
+          <a href="/financni-zdravi">Finanční zdraví</a>
           <a href="#reference">Reference</a>
           <a href="#kalkulator">Spolupráce</a>
           <a href="#kontakt" className="nav-cta-btn">Kontakt</a>
