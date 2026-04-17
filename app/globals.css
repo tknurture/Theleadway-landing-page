@@ -412,7 +412,9 @@ section {
 
 .services {
   background: #fff;
-  padding: 100px 48px;
+  padding: 100px 48px 260px;
+  position: relative;
+  z-index: 1;
 }
 
 .services-header {
@@ -1389,8 +1391,8 @@ details[open] .accordion-arrow { transform: rotate(180deg); }
 
 /* Standalone intro-split (bez hero nad ní) */
 .intro-split--standalone { margin-top: 0 !important; padding-top: 80px; }
-/* Alternating intro-split sekce na hlavní stránce */
-.intro-split--alt { margin-top: 0 !important; }
+/* intro-split sekce přečuhující do předchozí sekce */
+.intro-split--alt { margin-top: -160px !important; }
 
 /* Dark col CTA button variant */
 .intro-col-dark .btn-primary {

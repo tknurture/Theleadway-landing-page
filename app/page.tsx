@@ -393,7 +393,7 @@ export default function Home() {
           <a href="#sluzby">Služby</a>
           <a href="#financni-zdravi">Finanční zdraví</a>
           <a href="#reference">Reference</a>
-          <a href="#kalkulator">Spolupráce</a>
+          <a href="#kalkulator">Kalkulačka</a>
           <a href="#kontakt" className="nav-cta-btn">Kontakt</a>
         </nav>
       </header>
@@ -471,7 +471,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SLUŽBY — detail (přesunuto ze samostatné stránky) */}
+      {/* CO VÁM MŮŽEME POMOCI — grid karet (3. sekce) */}
+      <section className="services" id="co-umime">
+        <div className="section-inner">
+          <div className="services-header reveal">
+            <svg className="services-logo-icon" viewBox="0 0 120 80" fill="none">
+              <path d="M60 8 L14 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 8 L106 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 20 L26 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 20 L94 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 32 L38 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 32 L82 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 44 L50 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 44 L70 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            <h2 className="services-main-title">S ČÍM VÁM MŮŽEME POMOCI?</h2>
+          </div>
+          <div className="services-grid-new">
+            {SERVICES_GRID.map((s, i) => (
+              <div key={s.key} className="service-card-new reveal" style={{ '--delay': `${i * 80}ms` } as React.CSSProperties}>
+                <div className="service-img-wrap">
+                  <img src={`/images/services/${s.img}`} alt={s.title} className="service-img"/>
+                </div>
+                <h3 className="service-card-title">{s.title}</h3>
+                <p className="service-card-text">{s.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SLUŽBY — přečuhuje do services sekce nad ní */}
       <section className="intro-split intro-split--alt" id="sluzby">
         <div className="intro-col intro-col-dark reveal-left">
           <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -537,37 +567,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CO VÁM MŮŽEME POMOCI — grid karet */}
-      <section className="services" id="co-umime">
-        <div className="section-inner">
-          <div className="services-header reveal">
-            <svg className="services-logo-icon" viewBox="0 0 120 80" fill="none">
-              <path d="M60 8 L14 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 8 L106 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 20 L26 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 20 L94 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 32 L38 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 32 L82 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 44 L50 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 44 L70 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-            <h2 className="services-main-title">S ČÍM VÁM MŮŽEME POMOCI?</h2>
-          </div>
-          <div className="services-grid-new">
-            {SERVICES_GRID.map((s, i) => (
-              <div key={s.key} className="service-card-new reveal" style={{ '--delay': `${i * 80}ms` } as React.CSSProperties}>
-                <div className="service-img-wrap">
-                  <img src={`/images/services/${s.img}`} alt={s.title} className="service-img"/>
-                </div>
-                <h3 className="service-card-title">{s.title}</h3>
-                <p className="service-card-text">{s.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FINANČNÍ ZDRAVÍ — přesunuto ze samostatné stránky */}
+      {/* FINANČNÍ ZDRAVÍ */}
       <section className="intro-split intro-split--alt" id="financni-zdravi">
         <div className="intro-col intro-col-dark reveal-left">
           <svg className="intro-triangle" viewBox="0 0 120 70" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
