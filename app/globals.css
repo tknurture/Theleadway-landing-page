@@ -1397,6 +1397,10 @@ details[open] .accordion-arrow { transform: rotate(180deg); }
   border-radius: 24px 24px 0 0;
   box-shadow: 0 -16px 48px rgba(26, 26, 46, 0.22);
 }
+#financni-zdravi.intro-split--alt .intro-col {
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 20px 48px rgba(26, 26, 46, 0.22);
+}
 
 /* Dark col CTA button variant */
 .intro-col-dark .btn-primary {
