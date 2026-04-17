@@ -1077,8 +1077,8 @@ footer p {
 
 /* ── Tablet portrait (≤900px) ── */
 @media (max-width: 900px) {
-  .intro-split { margin-top: 0; grid-template-columns: 1fr; }
-  .intro-col { padding: 70px 32px; border-radius: 0; }
+  .intro-split { margin-top: 0 !important; grid-template-columns: 1fr; width: 100%; }
+  .intro-col { padding: 70px 32px; border-radius: 0; width: 100%; }
   .intro-photo-placeholder { width: 200px; height: 200px; }
   .testimonials-grid { grid-template-columns: 1fr; }
 }
@@ -1112,7 +1112,7 @@ footer p {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .hero { padding: 100px 20px 60px; min-height: auto; }
+  .hero { padding: 100px 20px 48px; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; }
   .hero-title { font-size: clamp(26px, 7vw, 36px); }
   .hero-eyebrow-plain { font-size: 12px; letter-spacing: 1.5px; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
