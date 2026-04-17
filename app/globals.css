@@ -1077,8 +1077,8 @@ footer p {
 
 /* ── Tablet portrait (≤900px) ── */
 @media (max-width: 900px) {
-  .intro-split { margin-top: 0 !important; grid-template-columns: 1fr; width: 100%; }
-  .intro-col { padding: 70px 32px; border-radius: 0; width: 100%; }
+  .intro-split { margin-top: 0 !important; grid-template-columns: 1fr !important; width: 100%; min-height: unset; overflow: hidden; }
+  .intro-col { padding: 70px 32px; border-radius: 0; width: 100%; min-width: 0; box-sizing: border-box; }
   .intro-photo-placeholder { width: 200px; height: 200px; }
   .testimonials-grid { grid-template-columns: 1fr; }
 }
