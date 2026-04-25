@@ -18,7 +18,7 @@ function formatNum(n: number) {
   return new Intl.NumberFormat('cs-CZ').format(Math.round(n));
 }
 
-const WEBHOOK_URL = 'https://n8n.korysol.cz/webhook/THELEADWAY_WEBHOOK';
+const WEBHOOK_URL = 'https://n8n.korysol.cz/webhook/c9469ec2-8ac3-4c57-9295-3dc1788ee840';
 const INTEREST_RATE = 4.55;
 
 function AnimatedCheck() {
