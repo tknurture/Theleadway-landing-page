@@ -378,6 +378,7 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           jmeno: fd.get('jmeno'),
+          telefon: fd.get('telefon'),
           email: fd.get('email'),
           zprava: fd.get('zprava'),
           source: 'TheLeadway - Kontakt',
@@ -875,6 +876,7 @@ export default function Home() {
                   <div className="contact-form-field"><input name="jmeno" type="text" placeholder="Jméno a příjmení" required/></div>
                   <div className="contact-form-field"><input name="email" type="email" placeholder="Email" required/></div>
                 </div>
+                <div className="contact-form-field"><input name="telefon" type="tel" placeholder="Telefon *" required/></div>
                 <div className="contact-form-field"><textarea name="zprava" placeholder="Zpráva"/></div>
                 <button type="submit" className="contact-submit-btn" disabled={contactSubmitting}>
                   {contactSubmitting ? 'Odesílám…' : 'ODESLAT'}
