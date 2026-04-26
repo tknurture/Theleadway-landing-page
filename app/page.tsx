@@ -423,7 +423,7 @@ export default function Home() {
         <div className="hero-overlay"/>
         <div className="hero-inner">
           <div className="hero-content reveal-left">
-            <p className="hero-eyebrow-plain">FINANČNÍ A REALITNÍ&nbsp;&nbsp;PORADENSTVÍ OLOMOUC</p>
+            <p className="hero-eyebrow-plain">FINANČNÍ A REALITNÍ&nbsp;&nbsp;PORADENSTVÍ</p>
             <h1 className="hero-title">
               <span className="hero-title-line"><span className="accent">JSME</span> FINANČNÍ</span>
               <span className="hero-title-line">&amp; REALITNÍ PROFESIONÁLOVÉ.</span>
@@ -447,7 +447,7 @@ export default function Home() {
             <path d="M60 32 L38 62"/><path d="M60 32 L82 62"/>
             <path d="M60 44 L50 62"/><path d="M60 44 L70 62"/>
           </svg>
-          <h2 className="intro-heading">FINANČNÍ PORADENSTVÍ OLOMOUC</h2>
+          <h2 className="intro-heading">FINANČNÍ PORADENSTVÍ</h2>
           <svg className="intro-quote" viewBox="0 0 40 30" fill="currentColor">
             <path d="M0 30 L0 18 C0 8, 5 2, 14 0 L16 5 C11 7, 8 12, 8 16 L12 16 L12 30 Z"/>
             <path d="M22 30 L22 18 C22 8, 27 2, 36 0 L38 5 C33 7, 30 12, 30 16 L34 16 L34 30 Z"/>
@@ -535,7 +535,7 @@ export default function Home() {
             <path d="M22 30 L22 18 C22 8, 27 2, 36 0 L38 5 C33 7, 30 12, 30 16 L34 16 L34 30 Z"/>
           </svg>
           <p className="intro-quote-text">
-            Hledáte kvalitní finanční služby v Olomouci? Máte zájem o řešení pro zabezpečení své rodiny,
+            Hledáte kvalitní finanční služby? Máte zájem o řešení pro zabezpečení své rodiny,
             zhodnocení financí nebo plánování budoucnosti? Jste na správném místě!
           </p>
           <p className="intro-quote-text">
