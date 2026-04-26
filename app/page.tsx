@@ -495,14 +495,14 @@ export default function Home() {
         <div className="section-inner">
           <div className="services-header reveal">
             <svg className="services-logo-icon" viewBox="0 0 120 80" fill="none">
-              <path d="M60 8 L14 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 8 L106 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 20 L26 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 20 L94 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 32 L38 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 32 L82 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 44 L50 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M60 44 L70 72" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 8 L14 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 8 L106 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 20 L26 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 20 L94 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 32 L38 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 32 L82 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 44 L50 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M60 44 L70 72" stroke="#3330B8" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
             <h2 className="services-main-title">S ČÍM VÁM MŮŽEME POMOCI?</h2>
           </div>
