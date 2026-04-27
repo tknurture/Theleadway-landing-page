@@ -602,10 +602,10 @@ section {
 
 .form-label {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .calc-card {
@@ -634,13 +634,14 @@ section {
 
 .calc-field label {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 8px;
-  letter-spacing: 0.3px;
 }
-.calc-field .required { color: var(--indigo); }
+.calc-field .required,
+.form-label .required { color: #e53e3e; }
+.required { color: #e53e3e; }
 
 .input-wrap { position: relative; }
 
@@ -690,7 +691,7 @@ section {
   margin-bottom: 14px;
 }
 .calc-slider-label span:first-child {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-dark);
 }
