@@ -571,6 +571,43 @@ section {
   color: var(--indigo);
 }
 
+.calc-info-block {
+  margin-top: 32px;
+}
+.calc-info-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+.calc-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  margin: 0;
+}
+.calc-info-list li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+.calc-info-list--ordered {
+  list-style: decimal;
+}
+.calc-info-list:not(.calc-info-list--ordered) {
+  list-style: disc;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
 .calc-card {
   background: #fff;
   padding: 44px;

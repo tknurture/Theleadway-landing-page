@@ -655,41 +655,35 @@ export default function Home() {
             <p className="section-eyebrow">Kalkulačka splátky</p>
             <h2 className="section-title">Spočítejte si hypotéku přesně</h2>
             <p className="calc-lead">
-              Zadejte cenu nemovitosti, akontaci a dobu splatnosti —
-              okamžitě uvidíte orientační výši splátky. Poté nám zanechejte kontakt
-              a ozveme se s přesnou nabídkou zdarma.
+              Hezké bydlení, pohodový život a rozumná investice do budoucna.
+              Sjednejte si hypoteční úvěr s naší pomocí.
             </p>
-            <div className="calc-trust">
-              <div className="calc-trust-item"><CheckIcon/>Bezplatná konzultace bez závazků</div>
-              <div className="calc-trust-item"><CheckIcon/>Srovnání nabídek od více bank</div>
-              <div className="calc-trust-item"><CheckIcon/>Odpověď do 24 hodin</div>
+
+            <div className="calc-info-block">
+              <h3 className="calc-info-title">Jaký bude průběh?</h3>
+              <ol className="calc-info-list calc-info-list--ordered">
+                <li>Vyplňte krátký formulář</li>
+                <li>Bude Vás kontaktovat hypoteční specialista</li>
+                <li>Vše za vás <strong>ZDARMA</strong> zařídíme</li>
+                <li>Na základě informací od Vás Vám připraví nabídku hypotéky</li>
+              </ol>
             </div>
 
-            <div className="calc-divider"/>
-
-            {calcSuccess ? (
-              <div className="calc-success-state">
-                <AnimatedCheck/>
-                <p>Děkujeme! Ozveme se vám co nejdříve.</p>
-              </div>
-            ) : (
-              <>
-                <div className="calc-form-title">Chci bezplatnou konzultaci</div>
-                <form onSubmit={handleCalcSubmit}>
-                  <div className="form-field"><input type="text" placeholder="Jméno a příjmení *" value={calcName} onChange={e => setCalcName(e.target.value)} required/></div>
-                  <div className="form-field"><input type="tel" placeholder="Telefon *" value={calcPhone} onChange={e => setCalcPhone(e.target.value)} required/></div>
-                  <div className="form-field"><input type="email" placeholder="E-mail *" value={calcEmail} onChange={e => setCalcEmail(e.target.value)} required/></div>
-                  <button type="submit" className="form-submit-btn" disabled={calcSubmitting}>
-                    {calcSubmitting ? 'Odesílám…' : 'KONTAKTUJTE NÁS'}
-                  </button>
-                  {calcMsg && <div className={`form-message ${calcMsg.type}`}>{calcMsg.text}</div>}
-                </form>
-              </>
-            )}
+            <div className="calc-info-block">
+              <h3 className="calc-info-title">Hlavní výhody hypotéky:</h3>
+              <ul className="calc-info-list">
+                <li>Bez poplatků za vyřízení</li>
+                <li>Výhodné úroky a slevy</li>
+                <li>Flexibilní měsíční splátky</li>
+                <li>Široké možnosti využití hypotéky</li>
+                <li>Možnost refinancování hypotéky od jiné banky</li>
+                <li>Až do 90 % hodnoty zastavené nemovitosti</li>
+              </ul>
+            </div>
           </div>
 
           <div className="calc-card reveal-right">
-            <div className="calc-card-title">Detailní kalkulačka hypotéky</div>
+            <div className="calc-card-title">Kalkulačka hypotéky</div>
             <div className="calc-card-sub">Orientační výpočet při sazbě {INTEREST_RATE} % p.a.</div>
 
             <div className="calc-field">
@@ -758,11 +752,39 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="calc-divider"/>
 
+            {calcSuccess ? (
+              <div className="calc-success-state">
+                <AnimatedCheck/>
+                <p>Děkujeme! Ozveme se vám co nejdříve.</p>
+              </div>
+            ) : (
+              <>
+                <div className="calc-form-title">Odeslat nezávaznou poptávku</div>
+                <form onSubmit={handleCalcSubmit}>
+                  <div className="form-field">
+                    <label className="form-label">Jméno a příjmení <span className="required">*</span></label>
+                    <input type="text" placeholder="Jméno a příjmení" value={calcName} onChange={e => setCalcName(e.target.value)} required/>
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">Telefon <span className="required">*</span></label>
+                    <input type="tel" placeholder="Telefon" value={calcPhone} onChange={e => setCalcPhone(e.target.value)} required/>
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">Email <span className="required">*</span></label>
+                    <input type="email" placeholder="Email" value={calcEmail} onChange={e => setCalcEmail(e.target.value)} required/>
+                  </div>
+                  <button type="submit" className="form-submit-btn" disabled={calcSubmitting}>
+                    {calcSubmitting ? 'Odesílám…' : 'ODESLAT NEZÁVAZNOU POPTÁVKU'}
+                  </button>
+                  {calcMsg && <div className={`form-message ${calcMsg.type}`}>{calcMsg.text}</div>}
+                </form>
+              </>
+            )}
           </div>
         </div>
       </section>
-
       {/* REFERENCE */}
       <section className="testimonials" id="reference">
         <div className="section-inner">
