@@ -275,6 +275,8 @@ export default function Home() {
   const [calcName, setCalcName] = useState('');
   const [calcPhone, setCalcPhone] = useState('');
   const [calcEmail, setCalcEmail] = useState('');
+  const [calcMesto, setCalcMesto] = useState('');
+  const [calcPsc, setCalcPsc] = useState('');
   const [calcSubmitting, setCalcSubmitting] = useState(false);
   const [calcSuccess, setCalcSuccess] = useState(false);
   const [calcMsg, setCalcMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -331,7 +333,7 @@ export default function Home() {
 
   async function handleCalcSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!calcName || !calcPhone || !calcEmail) return;
+    if (!calcName || !calcPhone || !calcEmail || !calcMesto || !calcPsc) return;
     setCalcSubmitting(true);
     setCalcMsg(null);
     try {
@@ -342,6 +344,8 @@ export default function Home() {
           jmeno: calcName,
           telefon: calcPhone,
           email: calcEmail,
+          mesto: calcMesto,
+          psc: calcPsc,
           cena_nemovitosti: propertyNum,
           akontace: downPaymentNum,
           akontace_procent: downPaymentPct,
@@ -358,6 +362,8 @@ export default function Home() {
         setCalcName('');
         setCalcPhone('');
         setCalcEmail('');
+        setCalcMesto('');
+        setCalcPsc('');
         setTimeout(() => setCalcSuccess(false), 5000);
       } else throw new Error();
     } catch {
@@ -774,6 +780,14 @@ export default function Home() {
                   <div className="form-field">
                     <label className="form-label">Email <span className="required">*</span></label>
                     <input type="email" placeholder="Email" value={calcEmail} onChange={e => setCalcEmail(e.target.value)} required/>
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">Město <span className="required">*</span></label>
+                    <input type="text" placeholder="Město" value={calcMesto} onChange={e => setCalcMesto(e.target.value)} required/>
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">PSČ <span className="required">*</span></label>
+                    <input type="text" placeholder="PSČ" inputMode="numeric" pattern="[0-9 ]*" value={calcPsc} onChange={e => setCalcPsc(e.target.value)} required/>
                   </div>
                   <button type="submit" className="form-submit-btn" disabled={calcSubmitting}>
                     {calcSubmitting ? 'Odesílám…' : 'ODESLAT NEZÁVAZNOU POPTÁVKU'}
