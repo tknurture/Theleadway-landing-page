@@ -789,6 +789,24 @@ section {
 
 .form-field { margin-bottom: 6px; }
 
+.form-field-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 8px 0;
+  color: var(--text-body);
+}
+
 .form-submit-btn,
 .contact-submit-btn {
   width: 100%;

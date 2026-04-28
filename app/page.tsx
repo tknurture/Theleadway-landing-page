@@ -784,11 +784,16 @@ export default function Home() {
                   <div className="form-field">
                     <label className="form-label">Město <span className="required">*</span></label>
                     <input type="text" placeholder="Město" value={calcMesto} onChange={e => setCalcMesto(e.target.value)} required/>
+                    <p className="form-field-hint">Město nám slouží k určení hypotečního poradce ve Vaší oblasti.</p>
                   </div>
                   <div className="form-field">
                     <label className="form-label">PSČ <span className="required">*</span></label>
                     <input type="text" placeholder="PSČ" inputMode="numeric" pattern="[0-9 ]*" value={calcPsc} onChange={e => setCalcPsc(e.target.value)} required/>
                   </div>
+                  <p className="form-consent">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{flexShrink:0, marginTop:'2px'}}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    Odesláním formuláře souhlasíte se zpracováním osobních údajů za účelem poskytnutí hypoteční nabídky. Budeme Vás kontaktovat na základě zadaných údajů.
+                  </p>
                   <button type="submit" className="form-submit-btn" disabled={calcSubmitting}>
                     {calcSubmitting ? 'Odesílám…' : 'ODESLAT NEZÁVAZNOU POPTÁVKU'}
                   </button>
