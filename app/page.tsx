@@ -279,6 +279,7 @@ export default function Home() {
   const [calcPsc, setCalcPsc] = useState('');
   const [calcSubmitting, setCalcSubmitting] = useState(false);
   const [calcSuccess, setCalcSuccess] = useState(false);
+  const [calcRevealed, setCalcRevealed] = useState(false);
   const [calcMsg, setCalcMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const contactFormRef = useRef<HTMLFormElement>(null);
@@ -359,12 +360,12 @@ export default function Home() {
       });
       if (res.ok) {
         setCalcSuccess(true);
+        setCalcRevealed(true);
         setCalcName('');
         setCalcPhone('');
         setCalcEmail('');
         setCalcMesto('');
         setCalcPsc('');
-        setTimeout(() => setCalcSuccess(false), 5000);
       } else throw new Error();
     } catch {
       setCalcMsg({ type: 'error', text: 'Nepodařilo se odeslat. Zkuste to prosím znovu.' });
@@ -748,13 +749,19 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="calc-result">
+            <div className={`calc-result${!calcRevealed ? ' calc-result--locked' : ''}`}>
               <div>
                 <div className="calc-result-label">Měsíční splátka</div>
                 <div className="calc-result-note">*orientační, při sazbě {INTEREST_RATE} % p.a.</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div className="calc-result-amount">{monthlyPayment > 0 ? formatCzk(monthlyPayment) : '— Kč'}</div>
+                {calcRevealed
+                  ? <div className="calc-result-amount">{monthlyPayment > 0 ? formatCzk(monthlyPayment) : '— Kč'}</div>
+                  : <div className="calc-result-amount calc-result-amount--hidden">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                      Vyplňte formulář
+                    </div>
+                }
               </div>
             </div>
 
@@ -763,7 +770,7 @@ export default function Home() {
             {calcSuccess ? (
               <div className="calc-success-state">
                 <AnimatedCheck/>
-                <p>Děkujeme! Ozveme se vám co nejdříve.</p>
+                <p>Děkujeme! Vaše měsíční splátka je <strong>{monthlyPayment > 0 ? formatCzk(monthlyPayment) : '—'}</strong>. Ozveme se vám co nejdříve.</p>
               </div>
             ) : (
               <>
