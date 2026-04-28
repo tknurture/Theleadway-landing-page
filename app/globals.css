@@ -610,7 +610,7 @@ section {
 
 .calc-card {
   background: #fff;
-  padding: 44px;
+  padding: 32px 36px;
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: 0 12px 48px rgba(26, 26, 46, 0.10);
@@ -618,19 +618,19 @@ section {
 
 .calc-card-title {
   font-family: 'Roboto Slab', serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .calc-card-sub {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
-.calc-field { margin-bottom: 20px; }
+.calc-field { margin-bottom: 14px; }
 
 .calc-field label {
   display: block;
@@ -649,7 +649,7 @@ section {
 .form-field input,
 .form-field textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: 10px 14px;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: var(--text-dark);
@@ -682,7 +682,7 @@ section {
   pointer-events: none;
 }
 
-.calc-slider-field { margin: 28px 0; }
+.calc-slider-field { margin: 16px 0; }
 
 .calc-slider-label {
   display: flex;
@@ -745,9 +745,9 @@ section {
 
 .calc-result {
   background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-dark) 100%);
-  padding: 24px 28px;
-  border-radius: 2px;
-  margin: 28px 0;
+  padding: 16px 22px;
+  border-radius: 8px;
+  margin: 16px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -768,7 +768,7 @@ section {
 }
 .calc-result-amount {
   font-family: 'Roboto Slab', serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #fff;
 }
@@ -776,18 +776,18 @@ section {
 .calc-divider {
   height: 1px;
   background: var(--border);
-  margin: 28px 0;
+  margin: 20px 0;
 }
 
 .calc-form-title {
   font-family: 'Roboto Slab', serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.form-field { margin-bottom: 14px; }
+.form-field { margin-bottom: 10px; }
 
 .form-submit-btn,
 .contact-submit-btn {
