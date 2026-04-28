@@ -277,6 +277,7 @@ export default function Home() {
   const [calcEmail, setCalcEmail] = useState('');
   const [calcMesto, setCalcMesto] = useState('');
   const [calcPsc, setCalcPsc] = useState('');
+  const [calcNote, setCalcNote] = useState('');
   const [calcSubmitting, setCalcSubmitting] = useState(false);
   const [calcSuccess, setCalcSuccess] = useState(false);
   const [calcRevealed, setCalcRevealed] = useState(false);
@@ -347,6 +348,7 @@ export default function Home() {
           email: calcEmail,
           mesto: calcMesto,
           psc: calcPsc,
+          poznamka: calcNote,
           cena_nemovitosti: propertyNum,
           akontace: downPaymentNum,
           akontace_procent: downPaymentPct,
@@ -366,6 +368,7 @@ export default function Home() {
         setCalcEmail('');
         setCalcMesto('');
         setCalcPsc('');
+        setCalcNote('');
       } else throw new Error();
     } catch {
       setCalcMsg({ type: 'error', text: 'Nepodařilo se odeslat. Zkuste to prosím znovu.' });
@@ -800,6 +803,10 @@ export default function Home() {
                       <label className="form-label">PSČ <span className="required">*</span></label>
                       <input type="text" placeholder="PSČ" inputMode="numeric" pattern="[0-9 ]*" value={calcPsc} onChange={e => setCalcPsc(e.target.value)} required/>
                     </div>
+                  </div>
+                  <div className="form-field" style={{marginTop:'4px'}}>
+                    <label className="form-label">Poznámka</label>
+                    <textarea placeholder="Volitelná poznámka..." value={calcNote} onChange={e => setCalcNote(e.target.value)} rows={2} style={{resize:'none'}}/>
                   </div>
                   <p className="form-consent">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{flexShrink:0, marginTop:'2px'}}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
