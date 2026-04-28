@@ -610,7 +610,7 @@ section {
 
 .calc-card {
   background: #fff;
-  padding: 18px 22px;
+  padding: 14px 18px;
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: 0 12px 48px rgba(26, 26, 46, 0.10);
@@ -627,10 +627,10 @@ section {
 .calc-card-sub {
   font-size: 12px;
   color: var(--text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.calc-field { margin-bottom: 7px; }
+.calc-field { margin-bottom: 6px; }
 
 .calc-field label {
   display: block;
@@ -649,7 +649,7 @@ section {
 .form-field input,
 .form-field textarea {
   width: 100%;
-  padding: 6px 10px;
+  padding: 5px 9px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: var(--text-dark);
@@ -682,7 +682,7 @@ section {
   pointer-events: none;
 }
 
-.calc-slider-field { margin: 6px 0; }
+.calc-slider-field { margin: 4px 0; }
 
 .calc-slider-label {
   display: flex;
@@ -776,7 +776,7 @@ section {
 .calc-divider {
   height: 1px;
   background: var(--border);
-  margin: 10px 0;
+  margin: 6px 0;
 }
 
 .calc-form-title {
@@ -788,6 +788,14 @@ section {
 }
 
 .form-field { margin-bottom: 6px; }
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.form-row-2 .form-field { margin-bottom: 0; }
 
 .form-field-hint {
   font-size: 11px;

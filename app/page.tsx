@@ -769,26 +769,30 @@ export default function Home() {
               <>
                 <div className="calc-form-title">Odeslat nezávaznou poptávku</div>
                 <form onSubmit={handleCalcSubmit}>
-                  <div className="form-field">
-                    <label className="form-label">Jméno a příjmení <span className="required">*</span></label>
-                    <input type="text" placeholder="Jméno a příjmení" value={calcName} onChange={e => setCalcName(e.target.value)} required/>
-                  </div>
-                  <div className="form-field">
-                    <label className="form-label">Telefon <span className="required">*</span></label>
-                    <input type="tel" placeholder="Telefon" value={calcPhone} onChange={e => setCalcPhone(e.target.value)} required/>
+                  <div className="form-row-2">
+                    <div className="form-field">
+                      <label className="form-label">Jméno a příjmení <span className="required">*</span></label>
+                      <input type="text" placeholder="Jméno a příjmení" value={calcName} onChange={e => setCalcName(e.target.value)} required/>
+                    </div>
+                    <div className="form-field">
+                      <label className="form-label">Telefon <span className="required">*</span></label>
+                      <input type="tel" placeholder="Telefon" value={calcPhone} onChange={e => setCalcPhone(e.target.value)} required/>
+                    </div>
                   </div>
                   <div className="form-field">
                     <label className="form-label">Email <span className="required">*</span></label>
                     <input type="email" placeholder="Email" value={calcEmail} onChange={e => setCalcEmail(e.target.value)} required/>
                   </div>
-                  <div className="form-field">
-                    <label className="form-label">Město <span className="required">*</span></label>
-                    <input type="text" placeholder="Město" value={calcMesto} onChange={e => setCalcMesto(e.target.value)} required/>
-                    <p className="form-field-hint">Město nám slouží k určení hypotečního poradce ve Vaší oblasti.</p>
-                  </div>
-                  <div className="form-field">
-                    <label className="form-label">PSČ <span className="required">*</span></label>
-                    <input type="text" placeholder="PSČ" inputMode="numeric" pattern="[0-9 ]*" value={calcPsc} onChange={e => setCalcPsc(e.target.value)} required/>
+                  <div className="form-row-2">
+                    <div className="form-field">
+                      <label className="form-label">Město <span className="required">*</span></label>
+                      <input type="text" placeholder="Město" value={calcMesto} onChange={e => setCalcMesto(e.target.value)} required/>
+                      <p className="form-field-hint">Slouží k určení poradce ve Vaší oblasti.</p>
+                    </div>
+                    <div className="form-field">
+                      <label className="form-label">PSČ <span className="required">*</span></label>
+                      <input type="text" placeholder="PSČ" inputMode="numeric" pattern="[0-9 ]*" value={calcPsc} onChange={e => setCalcPsc(e.target.value)} required/>
+                    </div>
                   </div>
                   <p className="form-consent">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{flexShrink:0, marginTop:'2px'}}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
