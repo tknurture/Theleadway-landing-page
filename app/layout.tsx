@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 
-const GA_ID = 'G-XXXXXXXXXX'; // <- sem vloz sve Measurement ID z Google Analytics
+const GA_ID = 'G-0L3WWPRC4D';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://theleadway.cz'),
