@@ -2,13 +2,17 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://theleadway.vercel.app'),
+  metadataBase: new URL('https://theleadway.cz'),
   title: 'TheLeadway | Realitní a finanční poradenství',
   description: 'Realitní a finanční poradenství. Bezplatná konzultace, online kalkulačka splátky. Provádíme Vás celým procesem od A do Z.',
+  icons: {
+    icon: '/images/favicon-512.png',
+    apple: '/images/favicon-512.png',
+  },
   openGraph: {
     title: 'TheLeadway | Realitní a finanční poradenství',
-    description: 'Hypotéka na míru. Bez stresu. Bezplatná konzultace.',
-    images: ['/images/theleadway_logo.png'],
+    description: 'Realitní a finanční poradenství na míru. Bez stresu. Bezplatná konzultace.',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
   },
 };
 
