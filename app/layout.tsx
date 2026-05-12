@@ -3,10 +3,10 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://theleadway.vercel.app'),
-  title: 'TheLeadway | Hypoteční a finanční poradenství',
-  description: 'Hypoteční specialista. Bezplatná konzultace, online kalkulačka splátky. Provádíme Vás celým procesem od A do Z.',
+  title: 'TheLeadway | Realitní a finanční poradenství',
+  description: 'Realitní a finanční poradenství. Bezplatná konzultace, online kalkulačka splátky. Provádíme Vás celým procesem od A do Z.',
   openGraph: {
-    title: 'TheLeadway | Hypoteční a finanční poradenství',
+    title: 'TheLeadway | Realitní a finanční poradenství',
     description: 'Hypotéka na míru. Bez stresu. Bezplatná konzultace.',
     images: ['/images/theleadway_logo.png'],
   },
