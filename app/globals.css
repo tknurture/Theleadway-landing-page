@@ -841,7 +841,9 @@ section {
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  border-radius: 2px;
+  border-radius: 16px !important;
+  -webkit-appearance: none;
+  appearance: none;
   transition: all 0.25s;
   margin-top: 6px;
 }
@@ -1081,7 +1083,9 @@ section {
   color: var(--text-dark);
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 16px !important;
+  -webkit-appearance: none;
+  appearance: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .contact-form-field textarea {
@@ -1727,4 +1731,120 @@ details[open] .accordion-arrow { transform: rotate(180deg); }
   .carousel-arrow svg { width: 18px; height: 18px; }
   .case-card-new { padding: 28px 20px; border-radius: 16px; }
   .case-columns { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ── SPOLUPRÁCE ── */
+.collab {
+  padding: 100px 48px;
+  background: var(--bg);
+}
+.collab-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.collab-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 12px 0 20px;
+  line-height: 1.2;
+}
+.collab-lead {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.collab-sublabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--indigo);
+  margin-bottom: 16px;
+}
+.collab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.collab-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.collab-list li svg {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: var(--indigo);
+}
+.collab-for-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.collab-for-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.collab-for-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+.collab-for-list li svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--indigo);
+}
+.collab-cta-box {
+  background: var(--indigo);
+  border-radius: 20px;
+  padding: 36px 40px;
+  color: #fff;
+}
+.collab-cta-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.collab-cta-text {
+  font-size: 15px;
+  color: #c7c9f5;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.collab-cta-box .btn-primary {
+  background: #fff;
+  color: var(--indigo);
+  border-color: #fff;
+}
+.collab-cta-box .btn-primary:hover {
+  background: transparent;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .collab { padding: 72px 24px; }
+  .collab-inner { grid-template-columns: 1fr; gap: 40px; }
 }

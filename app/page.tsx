@@ -423,6 +423,7 @@ export default function Home() {
           <a href="#financni-zdravi">Finanční zdraví</a>
           <a href="#reference">Reference</a>
           <a href="#kalkulator">Kalkulačka</a>
+          <a href="#spoluprace">Spolupráce</a>
           <a href="#kontakt" className="nav-cta-btn">Kontakt</a>
         </nav>
       </header>
@@ -897,6 +898,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SPOLUPRÁCE */}
+      <section className="collab" id="spoluprace">
+        <div className="collab-inner">
+          <div className="collab-left reveal-left">
+            <p className="section-eyebrow">Kariéra</p>
+            <h2 className="collab-title">Hledáš příležitost růst?</h2>
+            <p className="collab-lead">
+              V TheLeadWay hledáme ambiciózní lidi, kteří chtějí víc než jen běžnou práci.
+              Ať už máš zkušenosti z financí, obchodu nebo teprve začínáš — důležitá je hlavně chuť na sobě pracovat.
+            </p>
+            <p className="collab-sublabel">Co u nás najdeš?</p>
+            <ul className="collab-list">
+              {[
+                'Silné zázemí a podporu',
+                'Možnost kariérního i osobního růstu',
+                'Flexibilitu a svobodu',
+                'Férové ohodnocení',
+                'Tým lidí, kteří táhnou za jeden provaz',
+              ].map(item => (
+                <li key={item}>
+                  <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="20" cy="20" r="17"/>
+                    <polyline points="12 20 18 26 28 15"/>
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="collab-right reveal-right">
+            <p className="collab-sublabel">Pro koho je spolupráce vhodná?</p>
+            <p className="collab-for-text">Pro lidi, kteří chtějí:</p>
+            <ul className="collab-for-list">
+              {[
+                'Pracovat s lidmi',
+                'Rozvíjet se',
+                'Budovat něco vlastního',
+                'Mít výsledky ve svých rukou',
+              ].map(item => (
+                <li key={item}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="collab-cta-box">
+              <p className="collab-cta-title">Zaujalo tě to?</p>
+              <p className="collab-cta-text">Spoj se s námi a zjisti, jestli si sedneme.</p>
+              <a href="#kontakt" className="btn btn-primary">NAPIŠTE NÁM</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* KONTAKT */}
       <section className="contact" id="kontakt">
         <div className="contact-inner">
@@ -955,6 +1013,7 @@ export default function Home() {
           <a href="#vyhody">Výhody</a>
           <a href="#kalkulator">Kalkulačka</a>
           <a href="#reference">Reference</a>
+          <a href="#spoluprace">Spolupráce</a>
           <a href="#kontakt">Kontakt</a>
         </div>
         <p>© {new Date().getFullYear()} TheLeadway – Finanční profesionál</p>
