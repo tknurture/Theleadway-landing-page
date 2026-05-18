@@ -293,7 +293,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
+    const lenis = new Lenis({ lerp: 0.12, smoothWheel: true, syncTouch: false });
     const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
     const rafId = requestAnimationFrame(raf);
 
